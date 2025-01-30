@@ -10,7 +10,7 @@ from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 from rest_framework.views import APIView
 
 
-class UserRegistration(APIView):
+class UserRegistrationAPI(APIView):
 
     class InputSerializer(serializers.Serializer):
         username = serializers.CharField()

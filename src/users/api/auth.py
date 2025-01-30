@@ -3,8 +3,6 @@ This file contains api resources for users authentication.
 """
 
 from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
-from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
@@ -12,7 +10,7 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 
-class UserLogin(APIView):
+class UserLoginAPI(APIView):
 
     class InputSerializer(serializers.Serializer):
         username = serializers.CharField()
