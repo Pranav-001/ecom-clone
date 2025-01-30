@@ -5,6 +5,7 @@ This file contains api resources for products model.
 from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 from rest_framework.views import APIView
@@ -13,6 +14,7 @@ from products.models import Category, Product
 
 
 class ProductAPI(APIView):
+    permission_classes = (IsAuthenticated,)
 
     class InputSerializer(serializers.Serializer):
         name = serializers.CharField()
