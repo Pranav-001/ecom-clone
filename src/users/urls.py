@@ -1,8 +1,8 @@
 from django.urls import path
-from rest_framework.urlpatterns import format_suffix_patterns
 
-from users.api import users
+from users.api import auth, users
 
 urlpatterns = [
     path("", users.UserRegistration.as_view()),
+    path("login/", auth.UserLogin.as_view()),
 ]
