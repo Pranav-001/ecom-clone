@@ -1,3 +1,8 @@
-from django.urls import include, path
+from django.urls import path
+from rest_framework.urlpatterns import format_suffix_patterns
 
-urlpatterns = []
+from users.api import users
+
+urlpatterns = [
+    path("", users.UserRegistration.as_view()),
+]
